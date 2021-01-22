@@ -39,7 +39,7 @@ docker-example
 
 description:
 - `HOSTNAME='my-container-1'` - is an easy to use hostname, that you can use instead of Husarnet IPv6 addr to access your container over the internet
-- `JOINCODE='fc94:b01d:1803:8dd8:3333:2222:1234:1111/xxxxxxxxxxxxxxxxx'` - is an unique Join Code from your Husarnet network. You will find it at https://app.husarnet.com -> choosen network -> `[Add element]` button ->  `join code` tab
+- `JOINCODE='fc94:b01d:1803:8dd8:3333:2222:1234:1111/xxxxxxxxxxxxxxxxx'` - is an unique Join Code from your Husarnet network. You will find it at **https://app.husarnet.com -> choosen network -> `[Add element]` button ->  `join code` tab**
 - `-v my-container-1-v:/var/lib/husarnet` - you need to make `/var/lib/husarnet` as a volume to preserve it's state for example if you would like to update the image your container is based on. If you would like to run multiple containers on your host machine remember to provide unique volume name for each container (in our case `HOSTNAME-v`).
 
 After running a container you should see a log like this:
