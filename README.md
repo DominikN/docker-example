@@ -24,13 +24,7 @@ sudo docker build -t docker-example .
 
 ## run
 
-<!-- create `.env` file in the project main folder with your Husarnet credentials, eg.:
-```
-JOINCODE=fc94:b01d:1803:8dd8:2222:3333:1234:1234/xxxxxxxxxxxxxxxxxxxxx
-HOSTNAME=mydevice1
-```
-
-and run: -->
+Execute in a Linux terminal:
 
 ```bash
 sudo docker run --rm -it \
