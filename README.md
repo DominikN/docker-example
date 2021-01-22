@@ -17,6 +17,7 @@ Make sure `init-container.sh` is executable. If not:
 sudo chmod +x init-container.sh
 ```
 
+Then build an image:
 ```bash
 sudo docker build -t docker-example .
 ```
