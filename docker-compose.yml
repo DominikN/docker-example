@@ -4,6 +4,7 @@ services:
     build: ./
     volumes:
       - husarnet-ssh-v:/var/lib/husarnet
+      - /dev/net/tun:/dev/net/tun
     env_file: 
       - ./.env  # create .env file in the same folder as Dockerfile and specify HOSTNAME and JOINCODE there
     sysctls:
