@@ -9,8 +9,34 @@ Tested on host system:
     Docker version: 19.03.8, build afacb8b7f0
 ```
 
+You can run a container by using `docker run` or `docker-compose` commands and both methods are covered in the sections below. 
 
-## build
+----------
+
+## Using `docker-compose`
+
+### 1. Create `.env` file
+
+And specify Husarnet JoinCode and hostname there. It could look like this:
+
+```
+JOINCODE=fc94:b01d:1803:8dd8:3333:2222:1234:1111/xxxxxxxxxxxxxxxxx
+HOSTNAME=my-container-1
+```
+You will find your JoinCode at **https://app.husarnet.com -> choosen network -> `[Add element]` button ->  `join code` tab**
+
+
+### 2. Build an image and start a container
+
+```bash
+sudo docker-compose up
+```
+
+----------
+
+## Using `docker run`
+
+### 1. Build an image
 
 Make sure `init-container.sh` is executable. If not:
 ```bash
@@ -22,7 +48,7 @@ Then build an image:
 sudo docker build -t docker-example .
 ```
 
-## run
+### 2. Start a container
 
 Execute in a Linux terminal:
 
@@ -41,6 +67,10 @@ description:
 - `HOSTNAME='my-container-1'` - is an easy to use hostname, that you can use instead of Husarnet IPv6 addr to access your container over the internet
 - `JOINCODE='fc94:b01d:1803:8dd8:3333:2222:1234:1111/xxxxxxxxxxxxxxxxx'` - is an unique Join Code from your Husarnet network. You will find it at **https://app.husarnet.com -> choosen network -> `[Add element]` button ->  `join code` tab**
 - `-v my-container-1-v:/var/lib/husarnet` - you need to make `/var/lib/husarnet` as a volume to preserve it's state for example if you would like to update the image your container is based on. If you would like to run multiple containers on your host machine remember to provide unique volume name for each container (in our case `HOSTNAME-v`).
+
+----------
+
+## Result
 
 After running a container you should see a log like this:
 
