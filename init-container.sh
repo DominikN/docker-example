@@ -31,6 +31,8 @@ function print_instruction() {
     echo ""
 }
 
+sysctl net.ipv6.conf.lo.disable_ipv6=0
+
 if [[ ${JOINCODE} == "" ]]; then
     echo ""
     echo "ERROR: No JOINCODE provided in \"docker run ... \" command. Visit app.husarnet.com to get a JOINCODE"
