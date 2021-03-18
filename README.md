@@ -13,7 +13,29 @@ You can run a container by using `docker run` or `docker-compose` commands and b
 
 ----------
 
-## Using `docker-compose`
+## Quick Start (run from Docker Hub)
+
+### create `.env` file
+
+```
+HOSTNAME=my-container-XYZ
+JOINCODE=fc94:b01d:1803:8dd8:3333:2222:1234:1111/xxxxxxxxxxxxxxxxx
+```
+
+### run from a Docker Hub
+
+
+```bash
+sudo docker run --rm -it \
+--env-file ./.env \
+-v my-container-1-v:/var/lib/husarnet \
+--device /dev/net/tun \
+--cap-add NET_ADMIN \
+--sysctl net.ipv6.conf.all.disable_ipv6=0 \
+donowak/docker-example
+```
+
+## Build Using `docker-compose`
 
 ### 1. Create `.env` file
 
@@ -34,7 +56,7 @@ sudo docker-compose up
 
 ----------
 
-## Using `docker run`
+## Build Using `docker run`
 
 ### 1. Build an image
 
