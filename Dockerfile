@@ -1,5 +1,4 @@
-FROM arm64v8/ubuntu:20.04
-COPY qemu-arm-static /usr/bin
+FROM ubuntu:20.04
 
 # Install Husarnet Client
 RUN apt update -y
