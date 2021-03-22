@@ -20,7 +20,7 @@ RUN mkdir -p -m 0755 /var/run/sshd
 
 # Find your JOINCODE at https://app.husarnet.com
 ENV JOINCODE=""
-ENV HOSTNAME=my-container-1
+ENV HOSTNAME=my-container-2
 
 # SSH
 EXPOSE 22
