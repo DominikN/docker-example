@@ -35,5 +35,6 @@ jobs:
         file: ./Dockerfile
         platforms: linux/arm/v7, linux/arm64, linux/amd64
         push: true
-        tags: |
-          donowak/docker-example:latest
+        tags: donowak/docker-example:latest
+        cache-from: type=registry,ref=donowak/docker-example:latest
+        cache-to: type=inline
